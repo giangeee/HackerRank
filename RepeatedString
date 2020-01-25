@@ -1,0 +1,86 @@
+# def repeatedString(s, n):
+#     result = 0
+#     letters = list(s) #len = 3
+#     i = 0
+#     j = 0
+#     if len(letters) == 1 and letters[0] == "a":
+#         print(n)
+#         #return n
+#
+#     else:
+#         while i < n:
+#          #print(letters[j])
+#             if letters[j] == "a":
+#                 result += 1
+#             j += 1
+#             if j >= len(letters):
+#                 j = 0
+#             i += 1
+#         print(result)
+#     #return result
+# def repeatedString(s, n):
+#     re = 0
+#     number = float(n / len(s))
+#     remain = int(n % len(s))
+#     # i = 0
+#     # while i < len(letters):
+#     #     if letters[i] == "a":
+#     #         re += 1
+#     #     i += 1
+#     for i , v in enumerate(s):
+#         if s[i] == "a":
+#             re += 1
+#
+#     result = int(re * number)
+#     if remain == 0:
+#         print(result)
+#         return result
+#     else:
+#         prt = s[0:remain]
+#         for j, b in enumerate(prt):
+#             if prt[j] == "a":
+#                 result += 1
+#                 print(result)
+#     return result
+#     # if remain == 0:
+#     #     result = int(re * number)
+#     #     # print(result)
+#     #     return result
+#     # if remain != 0:
+#     #     result = int((re * number) + remain)
+#     #     # print(result)
+#     #     return result
+#     # # result = int((re * (n / len(s))) + (n % len(s)))
+#     # print(re)
+#     # print(number)
+#     # print(remain)
+#     # return result
+#     # print(result)
+def repeatedString(s, n):
+    re = 0 #how many times a shows up
+    for i, v in enumerate(s):
+        if s[i] == "a":
+            re += 1
+    # print(re)
+    num = int(n / len(s))
+    # print(num)
+    remain = n % len(s)
+    # print(remain)
+    result = re * num
+    if remain == 0:
+        # print(result)
+        return result
+    else:
+        sub = s[0:remain]
+        for j, y in enumerate(sub):
+            if s[j] == "a":
+                result += 1
+        # print(result)
+        return result
+
+if __name__ == '__main__':
+    # s = "a"
+    # n = 1000000000000
+    s = "accbaa"
+    n = 10
+    result = repeatedString(s,n)
